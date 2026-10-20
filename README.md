@@ -146,6 +146,16 @@ site/results.json
 
 Preprocessing uses Python pickle for local model/scaler persistence. Load only artifacts from a trusted run. The public result snapshots use JSON.
 
+## Presentation and project report
+
+| Document | Contents |
+| --- | --- |
+| [Editable PowerPoint](docs/presentation/Intraday_Volume_Lab.pptx) | Eight slides covering the objective, architecture, dataset, model, results, testing, and live report. Diagrams, tables, and the comparison chart remain editable. |
+| [Presentation PDF](docs/presentation/Intraday_Volume_Lab_Slides.pdf) | A matching slide view for quick reading and sharing. |
+| [Technical project report](docs/reports/Intraday_Volume_Lab_Report.pdf) | A six-page explanation of data preparation, model design, evaluation, recorded results, setup, reproducibility, and limitations. |
+
+All three documents describe the included synthetic demonstration and retain the recorded persistence comparison.
+
 ## Screenshots and demo links
 
 Documentation screenshots belong in `docs/screenshots/`; exported charts belong in `docs/figures/`. Capture the final report overview, data-validation table, held-out metrics, and a narrow viewport. The [publication guide](docs/PUBLISHING.md) includes naming and capture instructions.
