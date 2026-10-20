@@ -1,0 +1,2 @@
+# Preserve source and sample-data bytes used by experiment provenance.
+* -text whitespace=cr-at-eol

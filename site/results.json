@@ -1,0 +1,250 @@
+{
+  "project": "Intraday Volume Lab",
+  "maintainer": "Bikash Kushwaha",
+  "run_id": "e6d8efd4da9249249b41685cc62209ed",
+  "implementation_sha256": "8588e47e67f4c161caac99a5415bb5d084b6add1f2f300522cd30cb1b4d2796e",
+  "ingestion": {
+    "timestamp_unit": "s",
+    "exchange_timezone": "Asia/Kolkata",
+    "session_policy": "local_calendar_date"
+  },
+  "created_utc": "2026-10-20T15:57:24.437979+00:00",
+  "data_label": "Synthetic demonstration \u00b7 fictional symbols",
+  "target": "next-minute interval volume",
+  "target_transform": "log1p(shares), then training-only StandardScaler",
+  "lookback_minutes": 15,
+  "seed": 42,
+  "epochs_requested": 5,
+  "epochs_completed": 5,
+  "batch_size": 64,
+  "symbol_map": {
+    "ALPHA": 0,
+    "BETA": 1
+  },
+  "sample_counts": {
+    "train": 450,
+    "validation": 90,
+    "test": 180
+  },
+  "date_ranges": {
+    "train": {
+      "start": "2026-01-05T09:30:00+05:30",
+      "end": "2026-01-09T10:14:00+05:30",
+      "session_dates": 5
+    },
+    "validation": {
+      "start": "2026-01-12T09:30:00+05:30",
+      "end": "2026-01-12T10:14:00+05:30",
+      "session_dates": 1
+    },
+    "test": {
+      "start": "2026-01-13T09:30:00+05:30",
+      "end": "2026-01-14T10:14:00+05:30",
+      "session_dates": 2
+    }
+  },
+  "input_manifest": [
+    {
+      "file": "ALPHA-2026-01-05.jsonl",
+      "sha256": "9f9f172ebf3cb83bd5c3a007b5fa299f3e16647e16493f4f68a4c4dd47b78fcd"
+    },
+    {
+      "file": "ALPHA-2026-01-06.jsonl",
+      "sha256": "ded1825607c93c3add3cc7d1ca3f9ead910926a1238636872e4fbd435fdd95e6"
+    },
+    {
+      "file": "ALPHA-2026-01-07.jsonl",
+      "sha256": "d7e8906407886c92c68355a1975f5e2874b5b232c6d1ac82f05c79b75c14720a"
+    },
+    {
+      "file": "ALPHA-2026-01-08.jsonl",
+      "sha256": "65010a8675f41bebbe77554ffdf410915001984858000025f96a8bbd4626cf7c"
+    },
+    {
+      "file": "ALPHA-2026-01-09.jsonl",
+      "sha256": "8ddaeacc0e5f4aa706733773edcbc4434dae7d1809725aad65c2bfc0b8186f72"
+    },
+    {
+      "file": "ALPHA-2026-01-12.jsonl",
+      "sha256": "24df41e45fb646333939c831333aa12fcffaee33c5bb48c9d184b15261c57f9f"
+    },
+    {
+      "file": "ALPHA-2026-01-13.jsonl",
+      "sha256": "980162f4829f6748d2d7fcaa6fe81c9d5362ad3725c9e717217cac84f13cecf5"
+    },
+    {
+      "file": "ALPHA-2026-01-14.jsonl",
+      "sha256": "dd3fde20754f8b3e7f249c3591b02361ae551ed6f75c5487d186056d633974d4"
+    },
+    {
+      "file": "BETA-2026-01-05.jsonl",
+      "sha256": "3f2af630fe5ee5b7d123a6dae77d005b75648b2adb7fa1d504b3e78303be2cb7"
+    },
+    {
+      "file": "BETA-2026-01-06.jsonl",
+      "sha256": "bf8b2e4390b181322aa3ddb3ab58edf4215e798dbac417a094d03d91c55f49be"
+    },
+    {
+      "file": "BETA-2026-01-07.jsonl",
+      "sha256": "391fd2bb65ca270d0022101a4ebbee7c553e0ec5e24db97ffa383c10e3c9dad7"
+    },
+    {
+      "file": "BETA-2026-01-08.jsonl",
+      "sha256": "f83872738519bcabc375487717a4f0f5a96627274663208184782f1b5ff0172d"
+    },
+    {
+      "file": "BETA-2026-01-09.jsonl",
+      "sha256": "cb0efe256764d642d3b29e0cc5bf0013064f1e42e2d6b231cea0e30da10062f8"
+    },
+    {
+      "file": "BETA-2026-01-12.jsonl",
+      "sha256": "1dab8645d6602d58d808597a1616630a8ca7037f8873a0d907dfef019265a00d"
+    },
+    {
+      "file": "BETA-2026-01-13.jsonl",
+      "sha256": "55009e8526d76b5dda1de22daff055ed05156fbd9be85fdcb146c13a915be80e"
+    },
+    {
+      "file": "BETA-2026-01-14.jsonl",
+      "sha256": "cebcbdfbcf89576f929e248ae682eca3659825ed93b2635a72a0706dd3716d1c"
+    }
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "tensorflow": "2.20.0",
+    "keras": "3.15.1",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "history": {
+    "loss": [
+      1.4942084550857544,
+      0.9642202854156494,
+      0.7851992249488831,
+      0.611568808555603,
+      0.5593132972717285
+    ],
+    "mae": [
+      0.9071779251098633,
+      0.7121286988258362,
+      0.6101074814796448,
+      0.5219137668609619,
+      0.4915975034236908
+    ],
+    "val_loss": [
+      0.8266012668609619,
+      0.5978002548217773,
+      0.5494000911712646,
+      0.49088558554649353,
+      0.47323235869407654
+    ],
+    "val_mae": [
+      0.6551849842071533,
+      0.5357615351676941,
+      0.4877473711967468,
+      0.44890424609184265,
+      0.43834617733955383
+    ],
+    "learning_rate": [
+      0.0005000000237487257,
+      0.0005000000237487257,
+      0.0005000000237487257,
+      0.0005000000237487257,
+      0.0005000000237487257
+    ]
+  },
+  "metrics": {
+    "train": {
+      "model": {
+        "log_volume": {
+          "mae": 0.11000108400980632,
+          "rmse": 0.13951629236792884,
+          "r2": 0.8607782680481876,
+          "smape_pct": 1.6123401724769153
+        },
+        "shares": {
+          "mae": 110.59774293207823,
+          "rmse": 148.94976154184292,
+          "r2": 0.8446020345287361,
+          "smape_pct": 10.975121339564575
+        }
+      },
+      "persistence": {
+        "log_volume": {
+          "mae": 0.08823963695102267,
+          "rmse": 0.10941105069754505,
+          "r2": 0.9143791457122534,
+          "smape_pct": 1.2911762906379531
+        },
+        "shares": {
+          "mae": 89.74666344132919,
+          "rmse": 120.61406065182385,
+          "r2": 0.8981029568655745,
+          "smape_pct": 8.816496395806722
+        }
+      }
+    },
+    "validation": {
+      "model": {
+        "log_volume": {
+          "mae": 0.16390364434983995,
+          "rmse": 0.20433117577003657,
+          "r2": 0.6705736795484964,
+          "smape_pct": 2.3877841787717813
+        },
+        "shares": {
+          "mae": 170.71578401402428,
+          "rmse": 223.67284593268698,
+          "r2": 0.651056285179833,
+          "smape_pct": 16.300022517272566
+        }
+      },
+      "persistence": {
+        "log_volume": {
+          "mae": 0.09302644199795193,
+          "rmse": 0.11659015979231874,
+          "r2": 0.8927461668589439,
+          "smape_pct": 1.3423527542568414
+        },
+        "shares": {
+          "mae": 102.11115779680367,
+          "rmse": 138.2444925280682,
+          "r2": 0.8667017246961946,
+          "smape_pct": 9.291603423193045
+        }
+      }
+    },
+    "test": {
+      "model": {
+        "log_volume": {
+          "mae": 0.169860397444831,
+          "rmse": 0.21876179224954656,
+          "r2": 0.5849475399872992,
+          "smape_pct": 2.498898579871758
+        },
+        "shares": {
+          "mae": 165.18932216112538,
+          "rmse": 220.77698840152948,
+          "r2": 0.618994170014487,
+          "smape_pct": 16.85713442288053
+        }
+      },
+      "persistence": {
+        "log_volume": {
+          "mae": 0.09166384008195665,
+          "rmse": 0.11585252225950243,
+          "r2": 0.8835951612663377,
+          "smape_pct": 1.3346712270767729
+        },
+        "shares": {
+          "mae": 94.78887756911412,
+          "rmse": 128.83971895458916,
+          "r2": 0.8702451652396066,
+          "smape_pct": 9.15542798141887
+        }
+      }
+    }
+  }
+}

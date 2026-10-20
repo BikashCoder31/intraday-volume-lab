@@ -1,0 +1,65 @@
+/* Presentation overrides for the exported, read-only research report. */
+body.jp-Notebook {
+  --jp-content-font-size1: 16px;
+  --jp-content-line-height: 1.7;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.jp-InputPrompt,
+.jp-Collapser {
+  display: none !important;
+}
+
+.jp-Cell-inputWrapper,
+.jp-InputArea,
+.jp-Cell-outputWrapper,
+.jp-OutputArea-child {
+  display: block;
+  min-width: 0;
+}
+
+.jp-OutputArea-output {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.jp-RenderedHTMLCommon {
+  overflow-wrap: anywhere;
+}
+
+.jp-RenderedHTMLCommon pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.jp-RenderedHTMLCommon :is(h1, h2, h3) {
+  position: relative;
+  padding-right: 1.2em;
+  scroll-margin-top: 24px;
+}
+
+a.anchor-link {
+  display: inline-block;
+  position: absolute;
+  top: 0.2em;
+  right: 0.2em;
+  color: #24766d;
+  font-size: 0.7em;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid #24766d;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  body.jp-Notebook {
+    padding: 16px 12px;
+  }
+}
